@@ -16,7 +16,7 @@ case $1 in
     aws cloudfront create-invalidation --distribution-id "$DISTID" --paths $1 --profile $PROFILE
   ;;
   "preview")
-    (cd site && open -a Safari "gauge-security.html")
+    (cd site && open -a Safari "../site.html")
   ;;
   *)
     cat <<HELP
