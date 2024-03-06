@@ -1,5 +1,12 @@
 #! /usr/bin/env bash
 
+if [[ -x magick ]]
+then
+  CMD=magick
+else
+  CMD=convert
+fi
+
 FROM_DIR=$1
 TO_DIR=$2
 
@@ -39,7 +46,7 @@ do
   then
      echo "dry run"
   else
-    if ! magick "$file" "$new_path"
+    if ! $CMD "$file" "$new_path"
     then
       echo "conversion of $file failed!"
     fi
