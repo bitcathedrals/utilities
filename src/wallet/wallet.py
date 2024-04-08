@@ -22,7 +22,7 @@ def exec():
         print("wallet.py: no launch arguments provided")
         sys.exit(1)
 
-    status = run()
+    status = run(launch)
 
     sys.exit(status.returncode)
 
