@@ -1,0 +1,6 @@
+[test]
+string = "foo"
+
+[testing]
+number = 10
+
