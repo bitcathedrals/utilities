@@ -1,16 +1,27 @@
-import toml
 import sys
 import os
-from subprocess import run
+import subprocess
+
+import toml
 
 def process_section(parse, section):
     for variable,value in parse[section].items():
         os.environ[variable] = value
 
 def exec():
-    file = os.environ['HOME'] + "/.wallet.toml"  
-    parse = toml.load(file)   
-    
+    file = os.environ['HOME'] + "wallet.toml" 
+
+    parse=None
+
+    with open(file, "r") as toml_file:
+        contents = toml_file.read()
+        print(f'wallet.py: parsing toml file: {toml_file} contents: {contents}', file=sys.stderr)
+        parse = toml.loads(contents)
+
+    if not parse:
+        print(f'wallet.py: no toml file found: %s or it\'s empty' % file, file=sys.stderr)
+        sys.exit(1)
+
     sections = sys.argv[1].split(",")
 
     for sec in sections:
@@ -22,7 +33,7 @@ def exec():
         print("wallet.py: no launch arguments provided")
         sys.exit(1)
 
-    status = run(launch)
+    status = subprocess.call(launch)
 
     sys.exit(status.returncode)
 
