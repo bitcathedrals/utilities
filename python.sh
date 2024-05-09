@@ -1,5 +1,5 @@
 # pythonsh configuration file
-VERSION=0.2.1
+VERSION=0.2.2
 
 PACKAGES=wallet
 SOURCE=src
