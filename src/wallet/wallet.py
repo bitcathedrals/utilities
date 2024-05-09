@@ -9,7 +9,10 @@ def process_section(parse, section):
         os.environ[variable] = value
 
 def exec():
-    file = os.environ['HOME'] + "/wallet.toml"
+    if 'WALLET' in os.environ:
+        file = os.environ['WALLET'] + "/wallet.toml"
+    else:
+        file = os.environ['HOME'] + "/wallet.toml"
 
     parse=None
 
