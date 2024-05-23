@@ -38,7 +38,7 @@ def exec():
 
     status = subprocess.call(launch)
 
-    sys.exit(status.returncode)
+    sys.exit(status)
 
 if __name__ == "__main__":
     exec()
