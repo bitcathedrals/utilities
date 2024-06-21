@@ -1,7 +1,7 @@
 
 [project]
 description = "wallet secret and env var tool"
-authors = [ { name = "Michael Mattie" , email = "codermattie@runbox.com" } ]
+authors = [ { name = "Mr. Mattie" , email = "mattie@codermattie.net" } ]
 
 homepage = "https://github.com/bitcathedrals/utilities/"
 repository = "https://github.com/bitcathedrals/utilities.git"
