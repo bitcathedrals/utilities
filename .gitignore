@@ -2,4 +2,5 @@ dist/
 .DS_Store
 pyproject.toml
 .vscode
+*/*egg-info*
 
